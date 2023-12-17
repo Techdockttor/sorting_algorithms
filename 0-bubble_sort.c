@@ -6,11 +6,11 @@
  * @secondInteger: The second integer to swap.
  */
 void swap_integers(int *firstInteger, int *secondInteger) {
-    int temporaryVariable;
+	int temporaryVariable;
 
-    temporaryVariable = *firstInteger;
-    *firstInteger = *secondInteger;
-    *secondInteger = temporaryVariable;
+	temporaryVariable = *firstInteger;
+	*firstInteger = *secondInteger;
+	*secondInteger = temporaryVariable;
 }
 
 /**
@@ -21,25 +21,25 @@ void swap_integers(int *firstInteger, int *secondInteger) {
  * Description: Prints the array after each swap.
  */
 void bubble_sort(int *listOfIntegers, size_t numberOfIntegers) {
-    size_t currentPosition, numberOfIntegersToSort;
-    bool swapsMade = false;
+	size_t currentPosition, numberOfIntegersToSort;
+	bool swapsMade = false;
 
-    if (listOfIntegers == NULL || numberOfIntegers < 2) {
-        return;
-    }
+	if (listOfIntegers == NULL || numberOfIntegers < 2) {
+		return;
+	}
 
-    while (!swapsMade) {
-        swapsMade = true;
-        numberOfIntegersToSort = numberOfIntegers - 1;
+	while (!swapsMade) {
+		swapsMade = true;
+		numberOfIntegersToSort = numberOfIntegers - 1;
 
-        for (currentPosition = 0; currentPosition < numberOfIntegersToSort; currentPosition++) {
-            if (listOfIntegers[currentPosition] > listOfIntegers[currentPosition + 1]) {
-                swap_integers(&listOfIntegers[currentPosition], &listOfIntegers[currentPosition + 1]);
-                print_array(listOfIntegers, numberOfIntegers);
-                swapsMade = false;
-            }
-        }
+		for (currentPosition = 0; currentPosition < numberOfIntegersToSort; currentPosition++) {
+			if (listOfIntegers[currentPosition] > listOfIntegers[currentPosition + 1]) {
+				swap_integers(&listOfIntegers[currentPosition], &listOfIntegers[currentPosition + 1]);
+				print_array(listOfIntegers, numberOfIntegers);
+				swapsMade = false;
+			}
+		}
 
-        numberOfIntegersToSort--;
-    }
+		numberOfIntegersToSort--;
+	}
 }
